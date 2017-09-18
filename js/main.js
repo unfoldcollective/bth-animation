@@ -1,3 +1,8 @@
+var testObj = {
+    value: 0,
+    array: [0,0,0],
+};
+
 window.onload = function(){
     const myP5 = new p5();
     var ray_params = {
@@ -54,9 +59,14 @@ function wave (selector, waveWidth, duration, delay, onComplete) {
     nSteps = $(selector).length;
     stepDuration = duration / nSteps;
     staggerDelay = duration / nSteps;
-    TweenMax.staggerTo(selector, stepDuration, {opacity:1, delay: delay + 0},                    staggerDelay);
+    TweenMax.staggerTo(selector, stepDuration, {
+        opacity:1, 
+        delay: delay + 0,
+        ease: SteppedEase.config(1),
+    }, staggerDelay);
     TweenMax.staggerTo(selector, stepDuration, {
         opacity:0, 
         delay: delay + stepDuration * waveWidth,
+        ease: SteppedEase.config(1),
     }, staggerDelay, onComplete);
 }
