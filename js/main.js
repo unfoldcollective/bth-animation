@@ -14,7 +14,7 @@ window.onload = function(){
         waveWidth: 6,
         waveWidth_range: [1, 12],
         duration: 3,
-        duration_range: [1, 60],
+        duration_range: [1, 12],
         delay: 0,
         delay_range: [0, 5],
     }
